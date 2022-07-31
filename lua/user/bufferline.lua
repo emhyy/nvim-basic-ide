@@ -5,6 +5,7 @@ end
 
 bufferline.setup {
   options = {
+    mode="tabs",
     close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
     right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
     offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
