@@ -74,3 +74,4 @@ lualine.setup {
     lualine_z = { "progress" },
   },
 }
+-- lalalalakakaka
