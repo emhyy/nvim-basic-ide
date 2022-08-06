@@ -58,7 +58,7 @@ keymap("n", "nt", ":NvimTreeToggle<CR>", opts)
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
+-- keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope oldfiles <CR>", opts)
 
@@ -80,14 +80,5 @@ keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
--- Tab Navigate --
-keymap("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>")
-keymap("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>")
-keymap("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>")
-keymap("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>")
-keymap("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>")
-keymap("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>")
-keymap("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>")
-keymap("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>")
-keymap("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>")
-keymap("n", "<leader>0", ":BufferLineGoToBuffer -1<CR>")
+-- Buffer Navigate --
+keymap("n", "bp", ":BufferLinePick <CR>")
