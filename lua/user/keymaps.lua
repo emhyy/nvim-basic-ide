@@ -29,14 +29,14 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<C-n>", ":bnext<CR>", opts)
+keymap("n", "<C-p>", ":bprevious<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<S-q>", ":w<CR><cmd>Bdelete<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
@@ -78,3 +78,15 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
+
+-- Tab Navigate --
+keymap("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>")
+keymap("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>")
+keymap("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>")
+keymap("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>")
+keymap("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>")
+keymap("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>")
+keymap("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>")
+keymap("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>")
+keymap("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>")
+keymap("n", "<leader>0", ":BufferLineGoToBuffer -1<CR>")
