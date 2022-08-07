@@ -12,7 +12,6 @@ local servers = {
   "bashls",
   "jsonls",
   "yamlls",
-  "null-ls",
 }
 
 lsp_installer.setup()
