@@ -40,4 +40,4 @@ vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,]")
 vim.opt.iskeyword:append("-")
 
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
