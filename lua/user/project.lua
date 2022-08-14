@@ -3,13 +3,16 @@ if not status_ok then
 	return
 end
 project.setup({
-  manual_mode = true,
+	-- manual_mode = true,
 
 	-- detection_methods = { "lsp", "pattern" }, -- NOTE: lsp detection will get annoying with multiple langs in one project
 	detection_methods = { "pattern" },
 
 	-- patterns used to detect root dir, when **"pattern"** is in detection_methods
 	patterns = { ".git", "Makefile", "package.json" },
+
+	-- Show hidden files in telescope
+	show_hidden = true,
 })
 
 local tele_status_ok, telescope = pcall(require, "telescope")
@@ -17,4 +20,4 @@ if not tele_status_ok then
 	return
 end
 
-telescope.load_extension('projects')
+telescope.load_extension("projects")
