@@ -2,7 +2,7 @@ require('nightfox').setup({
   palettes = {
     -- Custom nordfox with better selection colors.
     nightfox = {
-      -- sel0 = "#134675", -- visual selection
+      sel0 = "#134675", -- visual selection
       -- sel0 = "#0f606f",
       sel1 = "#9c7502", -- search highlight
     },

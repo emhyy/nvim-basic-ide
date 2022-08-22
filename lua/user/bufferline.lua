@@ -6,13 +6,19 @@ end
 bufferline.setup {
   options = {
     -- mode="tabs",
-    numbers="ordinal",
+    -- numbers="ordinal",
     close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
     right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
     offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
-    separator_style = "slant", -- | "thick" | "thin" | { 'any', 'any' },
+    separator_style = "thick", -- | "thick" | "thin" | { 'any', 'any' },
   },
   highlights = {
+    buffer_selected = {
+      guifg = { attribute = "fg", highlight = "IncSearch" },
+      guibg = { attribute = "bg", highlight = "IncSearch" },
+      bold = true,
+      italic = true,
+    },
     fill = {
       guifg = { attribute = "fg", highlight = "#ff0000" },
       guibg = { attribute = "bg", highlight = "TabLine" },

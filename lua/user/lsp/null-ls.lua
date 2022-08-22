@@ -24,7 +24,7 @@ null_ls.setup({
 		}),
 		formatting.isort,
 		formatting.stylua,
-		formatting.google_java_format,
+		-- formatting.google_java_format,
 		formatting.fixjson,
 		formatting.shfmt,
 		diagnostics.flake8.with({ extra_args = { "--max-line-length=100" } }),
