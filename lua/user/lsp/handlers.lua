@@ -61,7 +61,7 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	keymap(bufnr, "n", "lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
-	keymap(bufnr, "n", "lF", "<cmd>lua vim.lsp.buf.range_formatting()<cr>", opts)
+	keymap(bufnr, "v", "lF", "<cmd>lua vim.lsp.buf.range_formatting()<cr>", opts)
 	keymap(bufnr, "n", "li", "<cmd>LspInfo<cr>", opts)
 	keymap(bufnr, "n", "lI", "<cmd>LspInstallInfo<cr>", opts)
 	keymap(bufnr, "n", "la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
@@ -81,7 +81,11 @@ M.on_attach = function(client, bufnr)
 	-- 	client.resolved_capabilities.document_formatting = false
 	-- end
 	--
-	client.resolved_capabilities.document_formatting = false
+	-- client.resolved_capabilities.document_formatting = false
+	-- turn off lsp-config formating for all.
+	if client.name ~= "null-ls" then
+		client.resolved_capabilities.document_formatting = false
+	end
 
 	lsp_keymaps(bufnr)
 	local status_ok, illuminate = pcall(require, "illuminate")
@@ -90,15 +94,15 @@ M.on_attach = function(client, bufnr)
 	end
 	illuminate.on_attach(client)
 
-  if client.name == "jdt.ls" then
-    vim.lsp.codelens.refresh()
-    if JAVA_DAP_ACTIVE then
-      require("jdtls").setup_dap { hotcodereplace = "auto" }
-      require("jdtls.dap").setup_dap_main_class_configs()
-    end
-    client.resolved_capabilities.document_formatting = true
-    client.resolved_capabilities.textDocument.completion.completionItem.snippetSupport = true
-  end
+	if client.name == "jdt.ls" then
+		vim.lsp.codelens.refresh()
+		if JAVA_DAP_ACTIVE then
+			require("jdtls").setup_dap({ hotcodereplace = "auto" })
+			require("jdtls.dap").setup_dap_main_class_configs()
+		end
+		client.resolved_capabilities.document_formatting = true
+		client.resolved_capabilities.textDocument.completion.completionItem.snippetSupport = true
+	end
 end
 
 return M
