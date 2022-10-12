@@ -31,6 +31,17 @@ null_ls.setup({
 		formatting.shfmt,
 		diagnostics.flake8.with({ extra_args = { "--max-line-length=100" } }),
 		diagnostics.eslint,
+		-- diagnostics.cspell.with({
+		-- 	diagnostic_config = {
+		-- 		-- see :help vim.diagnostic.config()
+		-- 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md
+		-- 		underline = true,
+		-- 		virtual_text = false,
+		-- 		signs = false,
+		-- 		update_in_insert = false,
+		-- 		severity_sort = false,
+		-- 	},
+		-- }),
 		code_actions.eslint,
 		code_actions.eslint_d,
 		code_actions.shellcheck,
